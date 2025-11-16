@@ -1,7 +1,6 @@
 # Hyprland Configurations
 
 This repo contains customizations for your Omarchy - Hyprland environment, including animation settings, border color adjustments, rounding changes, and keybindings for workspace management and window resizing. These settings are intended to enhance the look and feel of your Hyprland session.
-
 ![screenshot](./screenshot.png)
 ![screenshot2](./screenshot2.png)
 
@@ -92,3 +91,47 @@ bindd = SUPER,L,Lock Screen,exec,omarchy-lock-screen
 unbind = SUPER, SPACE
 bindd = SUPER, SPACE, Omarchy menu, exec, omarchy-menu
 ```
+
+## Idle and Lock Settings
+
+These settings configure general behavior for locking, sleep inhibition, and idle timeouts using listeners. They help manage screen locking, screensavers, and power-saving features automatically based on inactivity periods. This is useful for security (locking the session) and energy efficiency (turning off the display).
+
+```ini
+general {
+    lock_cmd = omarchy-lock-screen
+    before_sleep_cmd = loginctl lock-session
+    after_sleep_cmd = hyprctl dispatch dpms on
+    inhibit_sleep = 3
+}
+# 30 sec → start screensaver
+listener {
+    timeout = 30
+    on-timeout = pidof hyprlock || omarchy-launch-screensaver
+}
+# 60 sec → lock the screen
+listener {
+    timeout = 60
+    on-timeout = loginctl lock-session
+}
+# 5 sec → turn off screen *only if locked*
+listener {
+    timeout = 5
+    on-timeout = pidof hyprlock && hyprctl dispatch dpms off
+    on-resume = hyprctl dispatch dpms on && brightnessctl -r
+}
+```
+
+### General Section
+
+- **`lock_cmd = omarchy-lock-screen`**: Specifies the command to run when locking the screen, using a custom Omarchy lock screen utility.
+- **`before_sleep_cmd = loginctl lock-session`**: Runs this command before the system enters sleep mode, ensuring the session is locked for security.
+- **`after_sleep_cmd = hyprctl dispatch dpms on`**: Executes after waking from sleep to turn the display back on using Hyprland's DPMS (Display Power Management Signaling) control.
+- **`inhibit_sleep = 3`**: Sets the sleep inhibition level (likely a custom or Hyprland-specific value; 3 might correspond to inhibiting sleep under certain conditions like active fullscreen apps or media playback).
+
+### Listener Sections
+
+Listeners monitor for inactivity timeouts and trigger actions accordingly. These are configured for progressive idle management:
+
+- **30-second listener**: Starts the screensaver if the system is idle for 30 seconds. The command `pidof hyprlock || omarchy-launch-screensaver` checks if Hyprlock (a locking tool) is already running; if not, it launches the custom Omarchy screensaver.
+- **60-second listener**: Locks the entire session after 60 seconds of inactivity using `loginctl lock-session`.
+- **5-second listener**: Turns off the screen (via DPMS) only if the session is already locked (checked with `pidof hyprlock`). On resume (when activity is detected), it turns the display back on and restores brightness settings with `brightnessctl -r`. This ensures the display powers down quickly for energy savings but only when the system is securely locked.
