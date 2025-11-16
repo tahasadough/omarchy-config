@@ -1,8 +1,8 @@
 # Hyprland Configurations
 
 This repo contains customizations for your Omarchy - Hyprland environment, including animation settings, border color adjustments, rounding changes, and keybindings for workspace management and window resizing. These settings are intended to enhance the look and feel of your Hyprland session.
-![screenshot](./screenshot.png)
-![screenshot2](./screenshot2.png)
+![screenshot](./screenshots/screenshot.png)
+![screenshot2](./screenshots/screenshot2.png)
 
 # install:
 
