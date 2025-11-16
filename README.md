@@ -87,7 +87,7 @@ bindd = SUPER_CTRL_SHIFT, left,Move window to pervious workspace ,movetoworkspac
 bindd = SUPER_CTRL_SHIFT, right,Move window to next workspace ,movetoworkspace, +1
 bindd = SUPER_CTRL_SHIFT, up, Move window to pervious workspace ,movetoworkspace, -1
 bindd = SUPER_CTRL_SHIFT, down,Move window to next workspace ,movetoworkspace, +1
-bindd = SUPER,L,Lock Screen,exec,hyprlock
+bindd = SUPER,L,Lock Screen,exec,omarchy-lock-screen
 
 unbind = SUPER, SPACE
 bindd = SUPER, SPACE, Omarchy menu, exec, omarchy-menu
