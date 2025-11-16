@@ -103,22 +103,27 @@ general {
     after_sleep_cmd = hyprctl dispatch dpms on
     inhibit_sleep = 3
 }
-# 30 sec → start screensaver
-listener {
-    timeout = 30
-    on-timeout = pidof hyprlock || omarchy-launch-screensaver
-}
-# 60 sec → lock the screen
+
+# 1 Min → start screensaver
 listener {
     timeout = 60
-    on-timeout = loginctl lock-session
+    on-timeout = pidof hyprlock || omarchy-launch-screensaver
 }
+
+# 2 min → lock the screen
+listener {
+    timeout = 120
+    on-timeout =  loginctl lock-session
+}
+
 # 5 sec → turn off screen *only if locked*
 listener {
     timeout = 5
-    on-timeout = pidof hyprlock && hyprctl dispatch dpms off
+on-timeout = pidof hyprlock && \
+                 hyprctl dispatch dpms off && brightnessctl -d
     on-resume = hyprctl dispatch dpms on && brightnessctl -r
 }
+
 ```
 
 ### General Section
