@@ -16,7 +16,7 @@ _fzf_compgen_path() { fd --hidden --exclude .git . "$1" }
 _fzf_compgen_dir() { fd --type=d --hidden --exclude .git . "$1" }
 
 # Aliases
-alias ls="eza --color=always --git --no-filesize --icons=always --no-time --no-user --no-permissions"
+alias ls="eza --color=always --git --icons=always"
 alias open="xdg-open"
 alias cd="z"
 alias vim="nvim"
@@ -24,4 +24,3 @@ alias vim="nvim"
 # Tools Initialization
 eval "$(zoxide init zsh)"  # Smarter directory navigation
 eval "$(thefuck --alias)"  # Command correction
-
