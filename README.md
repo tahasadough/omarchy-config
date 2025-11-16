@@ -119,8 +119,7 @@ listener {
 # 5 sec → turn off screen *only if locked*
 listener {
     timeout = 5
-on-timeout = pidof hyprlock && \
-                 hyprctl dispatch dpms off && brightnessctl -d
+    on-timeout = pidof hyprlock && hyprctl dispatch dpms off && brightnessctl -d
     on-resume = hyprctl dispatch dpms on && brightnessctl -r
 }
 
