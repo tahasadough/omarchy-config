@@ -77,6 +77,10 @@ animations {
 
 ---
 
+Here is the updated **Keybindings** section reflecting your new configuration, including the additions for Gemini and the removal of Signal.
+
+---
+
 ## 🎹 Keybindings
 
 Variables used: `$terminal` (xdg-terminal), `$browser` (omarchy-launch-browser), `$file_manager` (nautilus).
@@ -90,7 +94,6 @@ Variables used: `$terminal` (xdg-terminal), `$browser` (omarchy-launch-browser),
 | **SUPER + L**         | Lock Screen                 |
 | **SUPER + SHIFT + W** | **Toggle Motion Wallpaper** |
 | **SUPER + B**         | **Toggle Opacity & Blur**   |
-| **SUPER + SPACE**     | Open Omarchy Menu           |
 
 ### Navigation & Resizing
 
@@ -105,25 +108,30 @@ Variables used: `$terminal` (xdg-terminal), `$browser` (omarchy-launch-browser),
 | Key Combination             | Action                        |
 | :-------------------------- | :---------------------------- |
 | **SUPER + SHIFT + B**       | Browser                       |
-| **SUPER + SHIFT + ALT + B** | Private Browser               |
+| **CTRL + ALT + P**          | Private Browser               |
+| **SUPER + SHIFT + ALT + B** | Private Browser (Alternate)   |
 | **SUPER + SHIFT + N**       | Editor                        |
 | **SUPER + SHIFT + T**       | Activity Monitor (`btop`)     |
 | **SUPER + SHIFT + D**       | Docker Manager (`lazydocker`) |
 | **SUPER + SHIFT + SLASH**   | 1Password                     |
 | **SUPER + SHIFT + M**       | Spotify                       |
 | **SUPER + SHIFT + O**       | Obsidian                      |
+| **SUPER + SHIFT + W**       | Typora                        |
 
-### Web Apps
+### Web Apps & AI
 
-| Key Combination              | Action          |
-| :--------------------------- | :-------------- |
-| **SUPER + SHIFT + A**        | Grok AI         |
-| **SUPER + SHIFT + E**        | Hey Email       |
-| **SUPER + SHIFT + C**        | Hey Calendar    |
-| **SUPER + SHIFT + Y**        | YouTube         |
-| **SUPER + SHIFT + X**        | X (Twitter)     |
-| **SUPER + SHIFT + ALT + G**  | WhatsApp        |
-| **SUPER + SHIFT + CTRL + G** | Google Messages |
+| Key Combination              | Action           |
+| :--------------------------- | :--------------- |
+| **SUPER + SHIFT + A**        | **Grok**         |
+| **SUPER + SHIFT + G**        | **Gemini**       |
+| **SUPER + SHIFT + E**        | Hey Email        |
+| **SUPER + SHIFT + C**        | Hey Calendar     |
+| **SUPER + SHIFT + Y**        | YouTube          |
+| **SUPER + SHIFT + P**        | Google Photos    |
+| **SUPER + SHIFT + X**        | X (Twitter)      |
+| **SUPER + SHIFT + ALT + X**  | X (Compose Post) |
+| **SUPER + SHIFT + ALT + G**  | WhatsApp         |
+| **SUPER + SHIFT + CTRL + G** | Google Messages  |
 
 ---
 
