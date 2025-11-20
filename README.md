@@ -77,7 +77,12 @@ animations {
 
 ---
 
-Here is the updated **Keybindings** section reflecting your new configuration, including the additions for Gemini and the removal of Signal.
+## 📊 Modern Status Bar (Waybar)
+
+The Waybar configuration has been overhauled to feature a **clean, floating aesthetic**.
+
+- **Design:** Replaces the traditional solid bar with distinct, floating modules.
+- **Cohesion:** Features consistent rounding and spacing to perfectly align with the Hyprland window geometry.
 
 ---
 
