@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/bash
 
 CONFIG_DIRS=("fastfetch" "ghostty" "hypr" "waybar")
 
@@ -29,31 +29,6 @@ for dir in "${CONFIG_DIRS[@]}"; do
     echo "⚠️  Warning: $SRC_PATH not found, skipping..."
   fi
 done
-
-echo ""
-read -p "Do you want to copy .zshrc to your home directory? (y/n): " answer
-
-case "$answer" in
-  [Yy]*)
-    if [ -f "$HOME/.zshrc" ]; then
-      echo "📦 Backing up existing .zshrc to $BACKUP_DIR/"
-      mv "$HOME/.zshrc" "$BACKUP_DIR/"
-    fi
-
-    if [ -f "$SOURCE_DIR/.zshrc" ]; then
-      cp "$SOURCE_DIR/.zshrc" "$HOME/"
-      echo "✅ .zshrc copied successfully!"
-    else
-      echo "⚠️  Warning: .zshrc not found in $SOURCE_DIR"
-    fi
-    ;;
-  [Nn]*)
-    echo "ℹ️  Skipped copying .zshrc. Please do it manually if needed."
-    ;;
-  *)
-    echo "❌ Invalid input. Skipping .zshrc copy."
-    ;;
-esac
 
 echo ""
 echo "🎉 All done!"
