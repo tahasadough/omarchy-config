@@ -100,6 +100,7 @@ Variables used: `$terminal` (xdg-terminal), `$browser` (omarchy-launch-browser),
 | **SUPER + L**         | Lock Screen                 |
 | **SUPER + SHIFT + W** | **Toggle Motion Wallpaper** |
 | **SUPER + B**         | **Toggle Opacity & Blur**   |
+| **SUPER + SHIFT + I** | **Toggle hypridle**         |
 
 ### Navigation & Resizing
 
