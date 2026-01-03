@@ -4,7 +4,6 @@ A highly customized, animated, and productivity-focused configuration for the **
 
 ![screenshot](./screenshots/screenshot.png)
 ![screenshot2](./screenshots/screenshot2.png)
-![screenshot3](./screenshots/screenshot3.png)
 
 ## 🚀 Installation
 
